@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NOIR DAIRIES — Private Archive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="admin.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">NOIR <span>DAIRIES</span></a>
+    <a class="back-link" href="index.html">PUBLIC QUIZ ↗</a>
+  </header>
+
+  <main class="page-wrap admin-wrap">
+    <section class="hero admin-hero">
+      <p class="eyebrow">PRIVATE ACCESS · OWNER ONLY</p>
+      <h1>The <em>archive.</em></h1>
+      <p class="hero-copy">Every entry, kept in one place.</p>
+    </section>
+
+    <section id="login-panel" class="panel">
+      <p class="eyebrow">OWNER SIGN IN</p>
+      <h2>Welcome back.</h2>
+
+      <form id="login-form">
+        <label class="field-label" for="owner-email">OWNER EMAIL</label>
+        <input id="owner-email" class="text-input" type="email" required placeholder="Your owner email">
+
+        <label class="field-label" for="owner-password">PASSWORD</label>
+        <input id="owner-password" class="text-input" type="password" required placeholder="Your password">
+
+        <button class="primary-button" type="submit">
+          UNLOCK ARCHIVE <span>↗</span>
+        </button>
+      </form>
+
+      <p id="login-message" class="error-message" role="alert"></p>
+    </section>
+
+    <section id="dashboard-panel" class="hidden">
+      <div class="dashboard-heading">
+        <div>
+          <p class="eyebrow">PRIVATE ARCHIVE</p>
+          <h2>Friend entries</h2>
+          <p id="entry-count" class="muted"></p>
+        </div>
+        <button id="logout-button" class="quiet-button" type="button">SIGN OUT</button>
+      </div>
+
+      <p id="dashboard-message" class="muted" role="status"></p>
+      <div id="submissions-root" class="submissions-root"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>NOIR DAIRIES</span>
+    <span>PRIVATE OWNER ARCHIVE</span>
+  </footer>
+</body>
+</html>
