@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NOIR DAIRIES — Friendship Quiz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">NOIR <span>DAIRIES</span></a>
+    <span class="header-note">A little test of how well you know me</span>
+  </header>
+
+  <main class="page-wrap">
+    <section class="hero">
+      <p class="eyebrow">THE FRIENDSHIP ARCHIVE · VOL. 01</p>
+      <h1>How well do<br><em>you know me?</em></h1>
+      <p class="hero-copy">A few favourites, a little personality, and memories worth keeping.</p>
+      <div class="hero-rule"><span></span> EST. IN FRIENDSHIP <span></span></div>
+    </section>
+
+    <section id="setup-panel" class="panel intro-panel">
+      <p class="eyebrow">BEFORE YOU ENTER</p>
+      <h2>Leave your mark.</h2>
+      <p class="muted">Choose a nickname so I can tell whose answers are whose. Please don't use your full name or share private details.</p>
+
+      <label class="field-label" for="nickname">YOUR NICKNAME</label>
+      <input id="nickname" class="text-input" type="text" maxlength="24" placeholder="e.g. moonchild" required>
+
+      <p class="privacy-note">Your nickname, quiz choices, and written answers will be saved and visible to the NOIR DAIRIES owner. Don't include anything you wouldn't want the owner to read.</p>
+
+      <button id="start-button" class="primary-button" type="button">
+        ENTER THE ARCHIVE <span>↗</span>
+      </button>
+      <p id="setup-error" class="error-message" role="alert"></p>
+    </section>
+
+    <form id="quiz-form" class="quiz-form hidden">
+      <div class="quiz-topline">
+        <span class="eyebrow">THE QUESTIONS</span>
+        <span id="progress-label" class="progress-label">0 / 23 scored</span>
+      </div>
+
+      <div class="progress-track">
+        <div id="progress-fill" class="progress-fill"></div>
+      </div>
+
+      <div id="questions-root"></div>
+
+      <section class="panel submit-panel">
+        <p class="eyebrow">THE FINAL PAGE</p>
+        <h2>Ready to seal it?</h2>
+        <p class="muted">Check your choices. The eight written questions are optional, but thoughtful answers are welcome.</p>
+        <button id="submit-button" class="primary-button" type="submit">
+          SUBMIT MY ANSWERS <span>↗</span>
+        </button>
+        <p id="submit-error" class="error-message" role="alert"></p>
+      </section>
+    </form>
+
+    <section id="success-panel" class="panel success-panel hidden" aria-live="polite">
+      <p class="eyebrow">ENTRY SAVED</p>
+      <h2>Your page is in<br><em>the archive.</em></h2>
+      <p id="success-copy" class="muted"></p>
+      <p class="score-display"><span id="score-number">0</span><small> / 23</small></p>
+      <p class="muted">Thank you for playing. Your answers have been sent to the NOIR DAIRIES owner.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>NOIR DAIRIES</span>
+    <span>MADE OF MEMORIES & MIDNIGHT THOUGHTS</span>
+  </footer>
+</body>
+</html>
