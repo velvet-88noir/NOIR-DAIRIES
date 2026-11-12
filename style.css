@@ -470,3 +470,82 @@ h2 {
     flex-direction: column;
   }
 }
+
+/* NOIR DAIRIES - RESPONSIVE DESIGN */
+
+/* Make sizing predictable */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  min-width: 320px;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Images and form controls */
+img,
+input,
+textarea,
+button,
+select {
+  max-width: 100%;
+}
+
+/* Tablets and smaller laptops */
+@media (max-width: 900px) {
+  .container,
+  .quiz-container,
+  .admin-container {
+    width: 92%;
+    max-width: 100%;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 600px) {
+  body {
+    font-size: 15px;
+  }
+
+  .container,
+  .quiz-container,
+  .admin-container,
+  .card {
+    width: 94%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h1 {
+    font-size: clamp(28px, 8vw, 42px);
+  }
+
+  h2 {
+    font-size: clamp(21px, 6vw, 30px);
+  }
+
+  button {
+    width: 100%;
+    min-height: 46px;
+  }
+
+  input,
+  textarea,
+  select {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  textarea {
+    min-height: 110px;
+  }
+}
